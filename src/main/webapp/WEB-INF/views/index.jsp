@@ -25,24 +25,34 @@
 <body>
 
 <div class="container pt-3">
-    Hello : Accident
+    Hello : <b>Anonymous</b>
     <div class="row">
         <div class="card" style="width: 100%">
             <div class="card-header">
-                Строки
+                Нарушения
             </div>
             <div class="card-body">
                 <table class="table">
                     <thead>
                     <tr>
-                        <th scope="col">Строка</th>
+                        <th scope="col">Номер п/п</th>
+                        <th scope="col">Наименование</th>
+                        <th scope="col">Описание</th>
+                        <th scope="col">Адрес</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${stringList}" var="str">
+                    <c:forEach items="${accidents}" var="accident">
                         <tr>
+                            <th scope="row"><c:out value="${accident.key}"/></th>
                             <td>
-                                <c:out value="${str}"/>
+                                <c:out value="${accident.value.name}"/>
+                            </td>
+                            <td>
+                                <c:out value="${accident.value.text}"/>
+                            </td>
+                            <td>
+                                <c:out value="${accident.value.address}"/>
                             </td>
                         </tr>
                     </c:forEach>
