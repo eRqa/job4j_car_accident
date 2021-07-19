@@ -44,15 +44,15 @@
                     <tbody>
                     <c:forEach items="${accidents}" var="accident">
                         <tr>
-                            <th scope="row"><c:out value="${accident.key}"/></th>
+                            <th scope="row"><c:out value="${accident.id}"/></th>
                             <td>
-                                <c:out value="${accident.value.name}"/>
+                                <c:out value="${accident.name}"/>
                             </td>
                             <td>
-                                <c:out value="${accident.value.text}"/>
+                                <c:out value="${accident.text}"/>
                             </td>
                             <td>
-                                <c:out value="${accident.value.address}"/>
+                                <c:out value="${accident.address}"/>
                             </td>
                         </tr>
                     </c:forEach>
