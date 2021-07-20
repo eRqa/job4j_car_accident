@@ -23,7 +23,7 @@
     <title>Accident</title>
 </head>
 <body>
-
+<a href="<c:url value='/create'/>">Добавить инцидент</a>
 <div class="container pt-3">
     Hello : <b>Anonymous</b>
     <div class="row">
@@ -46,6 +46,7 @@
                         <tr>
                             <th scope="row"><c:out value="${accident.id}"/></th>
                             <td>
+                                <a href="<c:url value='/edit?id=${accident.id}'/>">изм.</a>
                                 <c:out value="${accident.name}"/>
                             </td>
                             <td>

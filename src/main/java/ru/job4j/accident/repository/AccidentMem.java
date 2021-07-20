@@ -25,4 +25,25 @@ public class AccidentMem {
     public List<Accident> getAccidents() {
         return new ArrayList<>(accidents.values());
     }
+
+    public void create(Accident accident) {
+        accident.setId(accidents.size() + 1);
+        accidents.put(accident.getId(), accident);
+    }
+
+    public void edit(Accident accident) {
+        accidents.put(accident.getId(), accident);
+    }
+
+    public void save(Accident accident) {
+        if (accident.getId() == 0) {
+            create(accident);
+        } else {
+            edit(accident);
+        }
+    }
+
+    public Accident findById(int id) {
+        return accidents.get(id);
+    }
 }
