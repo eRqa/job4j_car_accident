@@ -7,18 +7,20 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @Repository
 public class AccidentMem {
 
-    private Map<Integer, Accident> accidents = new HashMap<>();
+    private final Map<Integer, Accident> accidents = new HashMap<>();
+    private final AtomicInteger size = new AtomicInteger();
 
     public AccidentMem() {
-        accidents.put(1, new Accident(1, "Превышение скорости",
+        create(new Accident("Превышение скорости",
                 "Превышение скорости на 20-40 км/ч", "Воронцовский бульвар 55"));
-        accidents.put(2, new Accident(2, "Выезд на выделенную полосу",
+        create(new Accident("Выезд на выделенную полосу",
                 "Выезд на полосу для общественного транспорта", "Невский проспект 27"));
-        accidents.put(3, new Accident(3, "Игнорирование знака",
+        create(new Accident("Игнорирование знака",
                 "Игнорирование знака движение по полосам", "Литейный проспект 6"));
     }
 
@@ -27,8 +29,9 @@ public class AccidentMem {
     }
 
     public void create(Accident accident) {
-        accident.setId(accidents.size() + 1);
-        accidents.put(accident.getId(), accident);
+        int id = size.getAndIncrement();
+        accident.setId(id);
+        accidents.put(id, accident);
     }
 
     public void edit(Accident accident) {
@@ -36,7 +39,7 @@ public class AccidentMem {
     }
 
     public void save(Accident accident) {
-        if (accident.getId() == 0) {
+        if (accident.getId() == -1) {
             create(accident);
         } else {
             edit(accident);

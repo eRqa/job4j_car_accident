@@ -15,7 +15,15 @@ public class Accident {
         this.address = address;
     }
 
+    public Accident(String name, String text, String address) {
+        this.id = -1;
+        this.name = name;
+        this.text = text;
+        this.address = address;
+    }
+
     public Accident() {
+        id = -1;
     }
 
     public int getId() {
