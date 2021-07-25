@@ -23,9 +23,9 @@
     <title>Accident</title>
 </head>
 <body>
-<a href="<c:url value='/create'/>">Добавить инцидент</a>
 <div class="container pt-3">
     Hello : <b>Anonymous</b>
+    <a href="<c:url value='/create'/>">Добавить инцидент</a>
     <div class="row">
         <div class="card" style="width: 100%">
             <div class="card-header">
@@ -39,6 +39,7 @@
                         <th scope="col">Наименование</th>
                         <th scope="col">Описание</th>
                         <th scope="col">Адрес</th>
+                        <th scope="col">Тип</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -54,6 +55,8 @@
                             </td>
                             <td>
                                 <c:out value="${accident.address}"/>
+                            </td>                            <td>
+                                <c:out value="${accident.type.name}"/>
                             </td>
                         </tr>
                     </c:forEach>
