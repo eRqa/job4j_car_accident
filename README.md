@@ -1,4 +1,4 @@
-# job4j_car_accident
+# job4j_car_accident [![Build Status](https://travis-ci.com/eRqa/job4j_car_accident.svg?branch=main)](https://travis-ci.com/eRqa/job4j_car_accident)
 
 В системе существуют две роли. Обычные пользователи и автоинспекторы.
 
