@@ -11,7 +11,7 @@ import ru.job4j.accident.model.Rule;
 import java.sql.PreparedStatement;
 import java.util.List;
 
-@Repository
+//@Repository
 public class AccidentJdbcTemplate {
     private final JdbcTemplate jdbc;
 
