@@ -27,7 +27,7 @@
         <tr>
             <td>Статьи:</td>
             <td>
-                <select name="rIds" multiple>
+                <select required name="rIds" multiple>
                     <c:forEach var="rule" items="${rules}" >
                         <option value="${rule.id}">${rule.name}</option>
                     </c:forEach>
