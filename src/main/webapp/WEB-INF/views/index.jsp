@@ -24,7 +24,7 @@
 </head>
 <body>
 <div class="container pt-3">
-    Hello : <b>Anonymous</b>
+    Hello : <b>${user.username}</b>
     <a href="<c:url value='/create'/>">Добавить инцидент</a>
     <div class="row">
         <div class="card" style="width: 100%">
