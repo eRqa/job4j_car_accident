@@ -22,8 +22,7 @@ public class IndexControl {
 
     @GetMapping("/")
     public String index(Model model) {
-        List<Accident> res = new ArrayList<>();
-        accidents.findAll().forEach(res::add);
+        List<Accident> res = new ArrayList<>(accidents.findAllAccidents());
         model.addAttribute("accidents", res);
         model.addAttribute("user", SecurityContextHolder.getContext().getAuthentication().getPrincipal());
         return "index";
