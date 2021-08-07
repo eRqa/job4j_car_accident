@@ -47,9 +47,11 @@ public class AccidentControl {
     @PostMapping("/save")
     public String save(@ModelAttribute Accident accident, HttpServletRequest req) {
         String[] ids = req.getParameterValues("rIds");
-        var intIds = Arrays.stream(ids).mapToInt(Integer::parseInt).boxed().collect(Collectors.toSet());
-        var foundedRules = rules.findAllById(intIds);
-        foundedRules.forEach(accident::addRule);
+        if (ids != null) {
+            var intIds = Arrays.stream(ids).mapToInt(Integer::parseInt).boxed().collect(Collectors.toSet());
+            var foundedRules = rules.findAllById(intIds);
+            foundedRules.forEach(accident::addRule);
+        }
         accidents.save(accident);
         return "redirect:/";
     }
