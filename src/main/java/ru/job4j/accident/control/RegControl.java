@@ -28,7 +28,11 @@ public class RegControl {
         user.setEnabled(true);
         user.setPassword(encoder.encode(user.getPassword()));
         user.setAuthority(authorities.findByAuthority("ROLE_USER"));
-        users.save(user);
+        try {
+            users.save(user);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return "redirect:/login";
     }
 
