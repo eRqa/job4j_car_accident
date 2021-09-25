@@ -4,7 +4,7 @@
 
 Стек:
 
-    - PostgreSQL
+    - Spring
     - Hibernate;
     - Maven;
     - Tomcat;
